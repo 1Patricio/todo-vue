@@ -3,13 +3,14 @@
         <div class="w-full sm:w-1/2 lg:w-1/3 mx-auto">
 
             <pre class="from-neutral-50">
-            {{ $store.state.todos }}
             </pre>
 
-            <TodoSpinner />
-            <TodoFormAdd />
-            <TodoItems />
-            <TodoEmpty />
+            <TodoSpinner v-if="loading"/>
+            <div v-else>
+                <TodoFormAdd />
+                <TodoItems />
+                <TodoEmpty />
+            </div>
         </div>
     </div>
 
@@ -31,10 +32,19 @@ export default {
         TodoItems,
         TodoEmpty
     },
+    data() {
+        return {
+            loading: false
+        }
+    },
     created() {
+        this.loading = true
         axios.get('http://localhost:3000/todos')
             .then((response) => {
                 this.$store.commit('storeTodos', response.data)
+            })
+            .finally(()  => {
+                this.loading = false
             })
     },
 }
