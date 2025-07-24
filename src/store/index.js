@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { createStore } from 'vuex'
 
 export default createStore({
@@ -5,13 +6,32 @@ export default createStore({
     todos: []
   },
   mutations: {
-    storeTodos(state, payload){
+    storeTodos(state, payload) {
       state.todos = payload;
+    },
+    storeTodo(state, payload) {
+      state.todos.push(payload)
     }
   },
   getters: {
   },
   actions: {
+    getTodos({ commit }) {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          return axios.get('http://localhost:3000/todos')
+            .then((response) => {
+              commit('storeTodos', response.data)
+              resolve()
+            })
+        }, 500)
+      })
+    },
+    addTodo({commit}, data) {
+      return axios.post('http://localhost:3000/todos', data).then((response) => {
+        commit('storeTodo', response.data)
+      })
+    }
   },
   modules: {
   }
