@@ -47,6 +47,10 @@ Este projeto tem como objetivo demonstrar o uso do Vue.js na criação de uma ap
 1. Clone este repositório
 2. Instale as dependências com `npm install`
 3. Inicie o servidor de desenvolvimento com `npm run serve`
-4. Inicie o banco local com `cd api/ json-server --watch db.json`
-5. Acesse o aplicativo em `http://localhost:8080`
+4. Inicie o banco local com
+   ```
+    cd api
+    json-server --watch db.json
+   ```
+6. Acesse o aplicativo em `http://localhost:8080`
 
