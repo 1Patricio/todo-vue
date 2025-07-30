@@ -1,6 +1,5 @@
 <template>
   <div class="flex min-h-screen">
-    <!-- Conteúdo principal à esquerda -->
     <div class="flex-1 flex items-center justify-center px-3 py-10 md:px-10">
       <div class="w-full sm:w-1/2 lg:w-2/3 mx-auto">
         <TodoSpinner v-if="loading" />
@@ -11,7 +10,6 @@
         </div>
       </div>
     </div>
-    <!-- Imagem à direita, só em telas médias para cima -->
     <div class="hidden md:flex flex-col items-center justify-center px-10 py-10">
       <TodoStateImage />
     </div>

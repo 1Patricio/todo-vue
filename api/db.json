@@ -1,39 +1,49 @@
 {
   "todos": [
     {
-      "title": "Analisar Planilha",
-      "completed": true,
+      "title": "Revisar contrato com fornecedor ",
+      "completed": false,
       "id": 1
     },
     {
-      "title": "Anderson",
-      "completed": true,
+      "title": "Validar orçamentos pendentes",
+      "completed": false,
       "id": 2
     },
     {
-      "title": "e",
-      "completed": true,
+      "title": "Enviar relatório mensal de desempenho",
+      "completed": false,
       "id": 3
     },
     {
-      "title": "e",
-      "completed": true,
+      "title": "Finalizar tela de login do aplicativo",
+      "completed": false,
       "id": 4
     },
     {
-      "title": "e",
-      "completed": true,
+      "title": "Criar apresentação para a reunião de segunda",
+      "completed": false,
       "id": 5
     },
     {
-      "title": "e",
-      "completed": true,
+      "title": "Marcar consulta médica",
+      "completed": false,
       "id": 6
     },
     {
-      "title": "e",
-      "completed": true,
+      "title": "Organizar lista de prioridades da semana",
+      "completed": false,
       "id": 7
+    },
+    {
+      "title": "Estudar Vue.JS",
+      "completed": false,
+      "id": 8
+    },
+    {
+      "title": "Postar projeto no LinkedIn",
+      "completed": false,
+      "id": 9
     }
   ]
 }
