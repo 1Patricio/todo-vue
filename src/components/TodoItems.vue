@@ -1,6 +1,5 @@
 <template>
     <div class="space-y-2">
-        <!-- Props com o :todo -->
         <TodoItem
             v-for="todo in $store.state.todos"
             :key="todo.id"

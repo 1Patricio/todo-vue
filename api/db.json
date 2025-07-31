@@ -11,39 +11,24 @@
       "id": 2
     },
     {
-      "title": "Enviar relatório mensal de desempenho",
-      "completed": false,
-      "id": 3
-    },
-    {
-      "title": "Finalizar tela de login do aplicativo",
-      "completed": false,
-      "id": 4
-    },
-    {
-      "title": "Criar apresentação para a reunião de segunda",
-      "completed": false,
-      "id": 5
-    },
-    {
-      "title": "Marcar consulta médica",
-      "completed": false,
-      "id": 6
-    },
-    {
-      "title": "Organizar lista de prioridades da semana",
+      "title": "Estudar Vue.JS",
       "completed": false,
       "id": 7
     },
     {
-      "title": "Estudar Vue.JS",
+      "title": "Postar projeto no Linkedin",
       "completed": false,
       "id": 8
     },
     {
-      "title": "Postar projeto no LinkedIn",
+      "title": "Revisar código",
       "completed": false,
       "id": 9
+    },
+    {
+      "title": "Organizar calendário atividades",
+      "completed": true,
+      "id": 10
     }
   ]
 }
