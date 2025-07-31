@@ -39,10 +39,7 @@
             </div>
 
             <div class="ml-auto flex items-center justify-center">
-                <button 
-                    class="focus:outline-none"
-                    @click="onDelete"
-                    >
+                <button class="focus:outline-none" @click="onDelete">
                     <svg
                         class="ml-3 h-4 w-4 text-gray-500"
                         viewBox="0 0 24 24"
@@ -65,6 +62,9 @@
     </div>
 </template>
 <script>
+import { ref } from 'vue'
+import { useStore } from 'vuex'
+
 export default {
     props: {
         todo: {
@@ -73,39 +73,46 @@ export default {
         }
     },
 
-    data() {
-        return { // Variáveis locais``
-            title: this.todo.title,
-            isCompleted: this.todo.completed
+    setup(props) {
+        const title = ref(props.todo.title)
+        const isCompleted = ref(props.todo.completed)
+        const store = useStore()
+
+        const onDelete = () => {
+            store.dispatch('deleteTodo', props.todo.id)
         }
-    },
 
-    methods: {
-        onChangeTitle() {
-            if (!this.title) {
-                return
-            }
-
-            this.updateTodo()
-        },
-        updateTodo() {
+        const updateTodo = () => {
             const payload = {
-                id: this.todo.id,
+                id: props.todo.id,
                 data: {
-                    title: this.title,
-                    completed: this.isCompleted
+                    title: title.value,
+                    completed: isCompleted.value
                 }
             }
-            this.$store.dispatch('updateTodo', payload)
-        },
-        onCheckClick() {
-            this.isCompleted = !this.isCompleted
-            if (this.title) {
-                this.updateTodo()
+            store.dispatch('updateTodo', payload)
+        }
+
+        const onChangeTitle = () => {
+            if (!title.value) {
+                return
             }
-        },
-        onDelete(){
-            this.$store.dispatch('deleteTodo', this.todo.id)
+            updateTodo()
+        }
+
+        const onCheckClick = () => {
+            isCompleted.value = !isCompleted.value
+            if (title.value) {
+                updateTodo()
+            }
+        }
+
+        return {
+            title,
+            isCompleted,
+            onDelete,
+            onChangeTitle,
+            onCheckClick
         }
     }
 }
